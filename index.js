@@ -5,11 +5,30 @@ const progressOfThisYear = (Date.now() - startTimeOfThisYear) / (endTimeOfThisYe
 const progressBarOfThisYear = generateProgressBar()
 
 function generateProgressBar() {
-    const progressBarCapacity = 30
-    const passedProgressBarIndex = parseInt(progressOfThisYear * progressBarCapacity)
-    const passedProgressBar = Array.from({length: passedProgressBarIndex}, _ => '█')
-    const leftProgressBar = Array.from({length: progressBarCapacity - passedProgressBarIndex}, _ => '▁')
-    return `{ ${passedProgressBar.concat(leftProgressBar).join('')} }`
+  const progressBarCapacity = 30
+  const passedProgressBarIndex = parseInt(progressOfThisYear * progressBarCapacity)
+  const passedProgressBar = Array.from({
+    length: passedProgressBarIndex
+  }, _ => '▓')
+  const leftProgressBar = Array.from({
+    length: progressBarCapacity - passedProgressBarIndex
+  }, _ => '░')
+  return `{ ${passedProgressBar.concat(leftProgressBar).join('')} }`
+}
+
+function getDateTimeFormat(date) {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    timeZone: 'UTC',
+    timeZoneName: 'short'
+  };
+  return new Intl.DateTimeFormat('en-US', options).format(date)
 }
 
 const readme = `\
@@ -19,7 +38,7 @@ const readme = `\
 
 ---
 
-⏰ Updated on ${new Date().toUTCString()}
+⏰ Updated on ${getDateTimeFormat(new Date())}
 
 ![Progress Bar CI](https://github.com/arthurbuhl/arthurbuhl/workflows/Progress%20Bar%20CI/badge.svg)\
 `
