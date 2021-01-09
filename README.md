@@ -1,9 +1,9 @@
 ### Hi there 👋
 
-⏳ Year progress { ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ } 1.93 %
+⏳ Year progress { ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ } 2.21 %
 
 ---
 
-⏰ Updated on Friday, January 8, 2021, 1:20 AM UTC
+⏰ Updated on Saturday, January 9, 2021, 1:21 AM UTC
 
 ![Progress Bar CI](https://github.com/arthurbuhl/arthurbuhl/workflows/Progress%20Bar%20CI/badge.svg)
